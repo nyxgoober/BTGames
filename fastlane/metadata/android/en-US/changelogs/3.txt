@@ -1,0 +1,6 @@
+<b>Release Erbium</b>
+<ul>
+<li>13 local multiplayer games over Bluetooth LE: Paddle, XO, Tetriminoes, Keymash, Block Tower, Rock Paper Scissors, 4 Chips, Checkers, Cup Shuffle, Chess, Shut The Box, Last! and Picture Match.</li>
+<li>Dark mode, Font variants, vibration, big-screen mode, four translations and an optional update check via F-Droid's public API.</li>
+</ul>
+Free software under GPL-3.0, without ads, tracking or proprietary software

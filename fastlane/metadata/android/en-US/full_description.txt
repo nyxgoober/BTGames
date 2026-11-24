@@ -1,0 +1,35 @@
+Play games with a friend in the next seat over Bluetooth Low Energy. No internet, no Wi-Fi, no accounts and no ads.
+
+Pick a game, enter a name, and the app finds nearby phones that picked the same game. Tap a name to send a request; if they accept, you are playing. Colours (red or blue) are random each match. Several games also support 2-6 player rooms and a tablet/TV table-screen mode.
+
+<b>Games</b>
+<ul>
+<li>Paddle</li>
+<li>XO (tic-tac-toe)</li>
+<li>Tetriminoes (score attack)</li>
+<li>Keymash (typing race)</li>
+<li>Block Tower</li>
+<li>Rock Paper Scissors</li>
+<li>4 Chips</li>
+<li>Checkers (Makhos, Thai draughts)</li>
+<li>Cup Shuffle</li>
+<li>Chess</li>
+<li>Shut The Box</li>
+<li>Last! (card game for 2 to 6 players)</li>
+<li>Picture Match (memory game for 2 to 6 players)</li>
+</ul>
+
+<b>Features</b>
+<ul>
+<li>Dark mode, two variable fonts (Intern by default, Inter), vibration on/off and a big-screen mode</li>
+<li>Translated into Thai, Japanese, Korean and Simplified Chinese</li>
+<li>Optional update check against F-Droid's public package API, no device data is sent</li>
+<li>Free software under GPL-3.0, with no trackers, ads or proprietary libraries</li>
+</ul>
+
+<b>Notes</b>
+<ul>
+<li>You need two or more phones with Bluetooth on.</li>
+<li>Android 12 and up asks for the "Nearby devices" permission. Android 11 and below ask for Location, which the platform requires for Bluetooth scanning. The app never uses your location.</li>
+<li>The internet permission is used only for the optional update check against F-Droid. The games themselves work fully offline.</li>
+</ul>

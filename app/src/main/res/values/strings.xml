@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BT Games</string>
+
+    <!-- Release codename, shown in the corner of the menu and Settings. One element per letter, A to Z. -->
+    <string name="codename" translatable="false">Erbium</string>
+
+    <!-- Language -->
+    <string name="lang_system">System default</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_appearance">Appearance</string>
+    <string name="settings_dark">Dark mode</string>
+    <string name="settings_dark_hint">Easier on the eyes at night. The Paddle court is always dark.</string>
+    <string name="settings_feedback">Feedback</string>
+    <string name="settings_vibration">Vibration</string>
+    <string name="settings_vibration_hint">A small buzz on taps, moves, goals and wins.</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_language_hint">Which language the app uses.</string>
+    <string name="settings_lang_dialog">Choose language</string>
+    <string name="settings_font">Font</string>
+    <string name="settings_font_hint">Intern or Inter.</string>
+    <string name="settings_font_dialog">Choose font</string>
+    <string name="font_intern">Intern</string>
+    <string name="font_inter">Inter</string>
+    <string name="settings_updates">Updates</string>
+    <string name="settings_auto_updates">Automatic update checks</string>
+    <string name="settings_auto_updates_hint">Check on startup whether a newer release exists.</string>
+    <string name="upd_unknown">Never checked this launch.</string>
+    <string name="upd_checking">Checking…</string>
+    <string name="upd_uptodate">You\'re up to date.</string>
+    <string name="upd_available">A newer release is available!</string>
+    <string name="upd_failed">Couldn\'t reach F-Droid.</string>
+    <string name="upd_download">Open F-Droid</string>
+    <string name="upd_open_link">Open link</string>
+    <string name="upd_check_now">Check now</string>
+    <string name="upd_try_again">Try again</string>
+
+    <!-- Licenses -->
+    <string name="settings_licenses">Licenses</string>
+    <string name="settings_licenses_hint">The app, its font and the libraries it uses.</string>
+    <string name="license_app">BT Games</string>
+    <string name="license_app_code" translatable="false">GPL-3.0</string>
+    <string name="license_app_hint">This app\'s source.</string>
+    <string name="license_app_body">The GNU General Public License v3.0. You may use, study, share and improve this app, but you must credit its authors and keep the copyleft: derivative works are also distributed under GPL-3.0. The full text ships in the source repository in LICENSE.</string>
+    <string name="license_font">Inter &amp; Intern</string>
+    <string name="license_font_code" translatable="false">OFL-1.1</string>
+    <string name="license_font_hint">Bundled fonts.</string>
+    <string name="license_font_body">SIL Open Font License 1.1. Inter by Rasmus Andersson; Intern by bvvst (a rounded variant).</string>
+    <string name="license_libs">Libraries</string>
+    <string name="license_libs_code" translatable="false">Apache-2.0</string>
+    <string name="license_libs_hint">Third-party libraries.</string>
+    <string name="license_libs_body">Copyright their respective authors, used under the Apache License 2.0 — a permissive licence that allows reuse as long as credit and the licence notice are kept.</string>
+
+    <!-- Menu -->
+    <string name="menu_title">BT Games</string>
+    <string name="menu_settings_desc">Settings</string>
+    <string name="menu_subtitle">Fun offline multiplayer games without Wi-Fi or internet to keep you occupied</string>
+    <string name="menu_update_ready">A newer release is avaliable!</string>
+    <string name="menu_update_open">Open Settings to download it.</string>
+
+    <!-- Shared -->
+    <string name="common_back">Back</string>
+    <string name="common_you">You</string>
+    <string name="common_them">Them</string>
+    <string name="common_them_low">them</string>
+    <string name="common_opponent">the other player</string>
+    <string name="common_opponent_cap">The other player</string>
+    <string name="common_someone">Someone</string>
+    <string name="common_player">Player</string>
+    <string name="common_leave">Leave game</string>
+    <string name="common_leave_short">Leave</string>
+    <string name="common_play_again">Play again</string>
+    <string name="common_you_win">You win</string>
+    <string name="common_draw">Draw</string>
+    <string name="common_waiting_rematch">Waiting for %1$s…</string>
+    <string name="subj_wins_named">%1$s wins</string>
+    <string name="subj_wins_anon">They win</string>
+    <string name="subj_wants_named">%1$s wants to play again</string>
+    <string name="subj_wants_anon">They want to play again</string>
+
+    <!-- Name screen -->
+    <string name="name_title">Your name</string>
+    <string name="name_heading">Who are you?</string>
+    <string name="name_desc">This is the name other players see in the %1$s lobby and during the game.</string>
+    <string name="name_label">Your name in the game</string>
+    <string name="name_hint">Short names fit best: up to 24 English letters, or about 8 Thai characters.</string>
+    <string name="name_find">Find %1$s players</string>
+
+    <!-- Lobby -->
+    <string name="lobby_playing_as">Playing as %1$s</string>
+    <string name="lobby_change_name">Change name</string>
+    <string name="lobby_asking">Asking %1$s to play…</string>
+    <string name="lobby_wait_accept">Waiting for them to tap Accept.</string>
+    <string name="lobby_mutual">You and %1$s asked each other</string>
+    <string name="lobby_choose_first">Choose who goes first.</string>
+    <string name="lobby_wait_choice">Waiting for them to choose who goes first…</string>
+    <string name="lobby_starting">Starting…</string>
+    <string name="lobby_nearby">Nearby players</string>
+    <string name="lobby_empty">No one yet</string>
+    <string name="lobby_empty_hint">Open BT Games on the other phone and pick %1$s. Bluetooth needs to be on for both.</string>
+    <string name="lobby_search">Search again</string>
+    <string name="lobby_unnamed">Unnamed player</string>
+    <string name="signal_close">Very close</string>
+    <string name="signal_near">Close</string>
+    <string name="signal_far">Far</string>
+    <string name="dlg_incoming">%1$s wants to play</string>
+    <string name="dlg_incoming_body">Tap Accept to start. They\'ll go first.</string>
+    <string name="dlg_decline">Decline</string>
+    <string name="dlg_accept">Accept</string>
+    <string name="dlg_first_title">Who goes first?</string>
+    <string name="dlg_first_body">You and %1$s asked each other at the same time, so the game starts right away.</string>
+    <string name="dlg_i_first">I go first</string>
+    <string name="dlg_they_first">%1$s goes first</string>
+
+    <!-- Blocked (permissions / Bluetooth) -->
+    <string name="blocked_title">One more step</string>
+    <string name="blocked_bt_perm">BT Games needs Bluetooth permission to find and connect to nearby players.</string>
+    <string name="blocked_bt_off">Turn Bluetooth on to find nearby players.</string>
+    <string name="blocked_continue">Continue</string>
+
+    <!-- Game titles and blurbs -->
+    <string name="g_paddle_title">Paddle</string>
+    <string name="g_paddle_blurb">Hold your phone sideways and drag to move your paddle. First to 7 wins.</string>
+    <string name="g_xo_title">XO</string>
+    <string name="g_xo_blurb">Get three in a row to win. Whoever sends the request goes first, then you take turns starting.</string>
+    <string name="g_tet_title">Tetriminoes</string>
+    <string name="g_tet_blurb">Both play at the same time. A random player picks the time, most points wins.</string>
+    <string name="g_key_title">Keymash</string>
+    <string name="g_key_blurb">A typing race. A random player picks sentences or words, fastest fingers win.</string>
+    <string name="g_tower_title">Block Tower</string>
+    <string name="g_tower_blurb">Pull blocks out for good. Whoever topples it loses.</string>
+    <string name="g_rps_title">Rock Paper Scissors</string>
+    <string name="g_rps_blurb">Throw at the same time. First to 5 takes the match.</string>
+    <string name="g_chips_title">4 Chips</string>
+    <string name="g_chips_blurb">Drop discs, connect four. Whoever sends the request starts, then you take turns starting.</string>
+    <string name="g_check_title">Checkers</string>
+    <string name="g_check_blurb">Thai draughts: 8 men a side, flying kings, jumps compulsory.</string>
+    <string name="g_chess_title">Chess</string>
+    <string name="g_chess_blurb">Classic chess with castling, en passant and promotion.</string>
+    <string name="g_cup_title">Cup Shuffle</string>
+    <string name="g_cup_blurb">Hide the ball, shuffle fast, fool your friend.</string>
+    <string name="g_shut_the_box_title">Shut The Box</string>
+    <string name="g_shut_the_box_blurb">Flip the tiles shut, 1‑9 or 1‑12. Lowest total wins. 2‑6 players.</string>
+
+    <!-- Paddle -->
+    <string name="paddle_serve_first">The ball comes to you first</string>
+    <string name="paddle_serve_theirs">The ball goes to %1$s first</string>
+    <string name="paddle_drag">Drag anywhere to move your paddle</string>
+    <string name="paddle_score">%1$d • %2$d</string>
+    <string name="paddle_wait_rematch">Waiting for %1$s to play again…</string>
+
+    <!-- XO -->
+    <string name="xo_draws">Draws</string>
+    <string name="xo_plays">plays %1$s</string>
+    <string name="xo_your_move">Your move</string>
+    <string name="xo_waiting">Waiting for %1$s</string>
+
+    <!-- Tetriminoes -->
+    <string name="tet_lines">%1$d lines</string>
+    <string name="tet_clock_blank">•:••</string>
+    <string name="tet_time_left">time left</string>
+    <string name="tet_pick_time_you">You pick the time</string>
+    <string name="tet_pick_time_wait">Waiting for %1$s to pick the time…</string>
+    <string name="tet_ready">Get ready</string>
+    <string name="tet_locked">Locked in • Waiting for %1$s…</string>
+    <string name="tet_time">Time!</string>
+    <string name="tet_level_status">Level %1$d</string>
+    <string name="tet_how_long">How long should the match last?</string>
+    <string name="tet_secs">%1$d sec</string>
+    <string name="tet_mins">%1$d min</string>
+    <string name="tet_choosing">%1$s is choosing…</string>
+    <string name="tet_go">Go!</string>
+    <string name="tet_first_to">Play %1$d min — most points wins</string>
+    <string name="tet_next">Next</string>
+    <string name="tet_level">Level</string>
+    <string name="tet_faster">gets faster</string>
+    <string name="tet_locked_badge">Locked in!</string>
+    <string name="tet_hint">Swipe anywhere to steer • Tap the board to spin • Swipe down to slam</string>
+    <string name="tet_left">Left</string>
+    <string name="tet_spin">Spin</string>
+    <string name="tet_right">Right</string>
+    <string name="tet_slam">Slam</string>
+    <string name="tet_match">Match %1$d • You %2$d, %3$s %4$d, draws %5$d</string>
+
+    <!-- Keymash -->
+    <string name="key_stat">%1$d wpm • %2$d%%</string>
+    <string name="key_wpm">%1$d wpm</string>
+    <string name="key_acc_suffix"> • %1$d%%</string>
+    <string name="key_typing">typing…</string>
+    <string name="key_pick_you">You pick the race</string>
+    <string name="key_pick_wait">Waiting for %1$s to pick the race…</string>
+    <string name="key_ready">Get ready</string>
+    <string name="key_finished">Finished • Waiting for %1$s…</string>
+    <string name="key_time">Time!</string>
+    <string name="key_words_mode">Type every word, space to submit</string>
+    <string name="key_sentence">Sentence %1$d of %2$d</string>
+    <string name="key_what">What are you racing?</string>
+    <string name="key_mode_sent">Sentences • Type 3 sentences, any case, dot optional</string>
+    <string name="key_mode_words">Words • 25 random words, space to submit</string>
+    <string name="key_choosing">%1$s is choosing…</string>
+    <string name="key_go">Go!</string>
+    <string name="key_words_sub">25 words</string>
+    <string name="key_sent_sub">3 sentences</string>
+    <string name="key_type_hint">Type here…</string>
+    <string name="key_opp_progress">%1$d/%2$d</string>
+    <string name="key_opp_wpm"> • %1$d wpm</string>
+    <string name="key_my_progress">You: %1$d/%2$d</string>
+    <string name="key_my_live"> • %1$d wpm • %2$d%%</string>
+    <string name="key_my_result">%1$d  •  %2$d wpm  •  %3$d%%</string>
+    <string name="key_their_result">%1$s: %2$d  •  %3$d wpm</string>
+    <string name="key_match">Match %1$d • You %2$d, %3$s %4$d, draws %5$d</string>
+
+    <!-- Block Tower -->
+    <string name="tower_pulled">pieces pulled</string>
+    <string name="tower_wobble">Wobble</string>
+    <string name="tower_layers">%1$d layers high</string>
+    <string name="tower_sync_wait">Waiting for %1$s…</string>
+    <string name="tower_sync">Setting up…</string>
+    <string name="tower_pull">Pull it?</string>
+    <string name="tower_your_move">Your move • Tap a block</string>
+    <string name="tower_wait">Waiting for %1$s…</string>
+    <string name="tower_toppled_you">You toppled it!</string>
+    <string name="tower_toppled_them">%1$s topples it! You win</string>
+    <string name="tower_toppled_them_anon">They topple it! You win</string>
+    <string name="tower_ready">Your tower is ready. Waiting for %1$s…</string>
+    <string name="tower_building">Building your tower…</string>
+    <string name="tower_hint1">Drag to look around. Tap a block, tap again (or Pull) to take it out for good. </string>
+    <string name="tower_hint2">Top layer is off limits.</string>
+    <string name="tower_pull_btn">Pull this block</string>
+    <string name="tower_match">Match %1$d • You %2$d, %3$s %4$d</string>
+
+    <!-- Rock Paper Scissors -->
+    <string name="rps_throw_rock">Rock</string>
+    <string name="rps_throw_paper">Paper</string>
+    <string name="rps_throw_scissors">Scissors</string>
+    <string name="rps_throw_rock_low">rock</string>
+    <string name="rps_throw_paper_low">paper</string>
+    <string name="rps_throw_scissors_low">scissors</string>
+    <string name="rps_verb_rock">Rock smashes scissors</string>
+    <string name="rps_verb_paper">Paper wraps rock</string>
+    <string name="rps_verb_scissors">Scissors cut paper</string>
+    <string name="rps_round">Round</string>
+    <string name="rps_first_to">first to %1$d</string>
+    <string name="rps_you_take">You take the round</string>
+    <string name="rps_they_take_named">%1$s takes the round</string>
+    <string name="rps_they_take_anon">They take the round</string>
+    <string name="rps_round_drawn">Round drawn</string>
+    <string name="rps_wait_thrown">Waiting for %1$s…</string>
+    <string name="rps_throw">Throw!</string>
+    <string name="rps_you_match">You win the match</string>
+    <string name="rps_they_match_named">%1$s wins the match</string>
+    <string name="rps_they_match_anon">They win the match</string>
+    <string name="rps_drawn_match">Drawn match</string>
+    <string name="rps_vs">vs</string>
+    <string name="rps_matches">Matches • You %1$d, %2$s %3$d, draws %4$d</string>
+    <string name="rps_draws_match">Draws this match: %1$d</string>
+
+    <!-- 4 Chips -->
+    <string name="chips_starts">starts round %1$d</string>
+    <string name="chips_you_next">you start next</string>
+    <string name="chips_they_next">they start next</string>
+    <string name="chips_draws">Draws</string>
+    <string name="chips_you_connect">You connect four</string>
+    <string name="chips_they_connect_named">%1$s connects four</string>
+    <string name="chips_they_connect_anon">They connect four</string>
+    <string name="chips_full">Board full</string>
+    <string name="chips_your_move">Your move</string>
+    <string name="chips_waiting">Waiting for %1$s</string>
+    <string name="chips_play_again">Play again</string>
+
+    <!-- Checkers -->
+    <string name="check_starts">starts round %1$d</string>
+    <string name="check_you_next">you start next</string>
+    <string name="check_they_next">they start next</string>
+    <string name="check_round">Round</string>
+    <string name="check_you_take">You take the game</string>
+    <string name="check_they_take_named">%1$s takes the game</string>
+    <string name="check_they_take_anon">They take the game</string>
+    <string name="check_jump">Keep jumping!</string>
+    <string name="check_must_jump">Jump required</string>
+    <string name="check_your_move">Your move</string>
+    <string name="check_waiting">Waiting for %1$s</string>
+    <string name="check_play_again">Play again</string>
+    <string name="check_hint">Jumps are compulsory • Tap or drag a piece</string>
+
+    <!-- Chess -->
+    <string name="chess_white">White</string>
+    <string name="chess_black">Black</string>
+    <string name="chess_draws">Draws</string>
+    <string name="chess_your_move">Your move</string>
+    <string name="chess_waiting">Waiting for %1$s</string>
+    <string name="chess_check">Check</string>
+    <string name="chess_stalemate">Stalemate — draw</string>
+    <string name="chess_fifty">Draw — 50-move rule</string>
+    <string name="chess_repetition">Draw — threefold repetition</string>
+    <string name="chess_promote">Promote pawn to:</string>
+    <string name="chess_queen">Queen</string>
+    <string name="chess_rook">Rook</string>
+    <string name="chess_bishop">Bishop</string>
+    <string name="chess_knight">Knight</string>
+    <string name="chess_play_again">Play again</string>
+    <string name="chess_hint">Tap a piece and its destination or drag it there.</string>
+
+    <!-- Cup Shuffle -->
+    <string name="cup_empty">The shuffler is setting up…</string>
+    <string name="cup_progress">%1$d shuffles • %2$ds left • Tap fast!</string>
+    <string name="cup_watch">%1$d swaps so far • Watch closely…</string>
+    <string name="cup_count">%1$d cups</string>
+    <string name="cup_tap_hide">Tap a cup above to hide the ball, then shuffle!</string>
+    <string name="cup_tap_shuffle">TAP TO SHUFFLE!</string>
+    <string name="cup_shuffling">shuffling round %1$d</string>
+    <string name="cup_guessing">guessing round %1$d</string>
+    <string name="cup_round">Round</string>
+    <string name="cup_hide">Hide the ball</string>
+    <string name="cup_hiding_named">%1$s is hiding the ball…</string>
+    <string name="cup_hiding_anon">The other player is hiding the ball…</string>
+    <string name="cup_showing">Showing the ball…</string>
+    <string name="cup_watch_ball">Watch where the ball is!</string>
+    <string name="cup_shuffle_fast">Shuffle! Tap fast!</string>
+    <string name="cup_watch_cups">Watch the cups…</string>
+    <string name="cup_wait_guess">Waiting for %1$s to guess…</string>
+    <string name="cup_locked">Locked in… revealing…</string>
+    <string name="cup_which">Which cup?</string>
+    <string name="cup_found">You found it!</string>
+    <string name="cup_finds_named">%1$s finds it!</string>
+    <string name="cup_finds_anon">They find it!</string>
+    <string name="cup_fooled_you">You fooled %1$s!</string>
+    <string name="cup_fools_named">%1$s fools you!</string>
+    <string name="cup_fools_anon">They fool you!</string>
+    <string name="cup_wants_named">%1$s wants another round</string>
+    <string name="cup_wants_anon">They want another round</string>
+    <string name="cup_next">Next round (roles swap)</string>
+
+    <!-- Shut The Box -->
+    <string name="stb_game_over">Game over</string>
+    <string name="stb_your_turn">Your turn</string>
+    <string name="stb_turn_of">%1$s\'s turn</string>
+    <string name="stb_waiting">Waiting for the game…</string>
+    <string name="stb_total">Total: %1$d</string>
+    <string name="stb_roll">Roll the dice</string>
+    <string name="stb_pick">Tap numbers that add up to %1$d</string>
+    <string name="stb_close">Close %1$s = %2$d</string>
+    <string name="stb_no_move">No move possible with this roll.</string>
+    <string name="stb_shut">You shut the box!</string>
+    <string name="stb_finish">Finish my turn</string>
+    <string name="stb_scores">Scores (lower is better)</string>
+    <string name="stb_you">You</string>
+    <string name="stb_winner">Winner: %1$s</string>
+    <string name="stb_leave">Leave</string>
+    <string name="stb_mode">Game mode</string>
+    <string name="stb_mode_until">Roll until done</string>
+    <string name="stb_mode_one">One flip a turn</string>
+    <string name="stb_out">out</string>
+    <string name="stb_tiles">Tiles</string>
+    <string name="stb_tiles_9">1‑9</string>
+    <string name="stb_tiles_12">1‑12</string>
+
+    <!-- Mode picker (games that support a multiplayer room as well as two players) -->
+    <string name="mode_title">How to play</string>
+    <string name="mode_heading">Choose how to play %1$s</string>
+    <string name="mode_two">Two players</string>
+    <string name="mode_two_desc">Play one friend nearby, just like the other games.</string>
+    <string name="mode_create">Create a room</string>
+    <string name="mode_create_desc">Host a room for %1$d–%2$d players. Others join you.</string>
+    <string name="mode_join">Join a room</string>
+    <string name="mode_join_desc">Find a room a friend nearby has opened.</string>
+    <string name="mode_screen">Table screen</string>
+    <string name="mode_screen_desc">Put this tablet or TV in the middle of the table. %1$d–%2$d players join with their phones; it shows everyone\'s side of the game, cards face down.</string>
+
+    <!-- Room lobby -->
+    <string name="room_host_title">Your room</string>
+    <string name="room_count">%1$d of %2$d players</string>
+    <string name="room_need_more">Waiting for at least %1$d players…</string>
+    <string name="room_start">Start game</string>
+    <string name="room_joined_wait">In %1$s\'s room. Waiting for them to start…</string>
+    <string name="room_looking">Looking for rooms…</string>
+    <string name="room_none_hint">Ask a friend to open BT Games, pick %1$s and tap Create a room. Bluetooth needs to be on for both.</string>
+    <string name="room_players">Players</string>
+    <string name="room_screen_title">Table screen</string>
+    <string name="menu_cat_two">Two players</string>
+    <string name="menu_cat_multi">Multiplayer</string>
+    <string name="menu_screen_blocked">Screen mode only works with multiplayer games that have a table screen. Turn it off in Settings to play this one.</string>
+    <string name="settings_screen">Big screen</string>
+    <string name="settings_screen_mode">Screen mode</string>
+    <string name="settings_screen_mode_hint">For a tablet or TV in the middle of the table. Opening a multiplayer game hosts it as the table screen straight away, showing the whole table. Two-player games do not work in this mode.</string>
+
+    <!-- Last! -->
+    <string name="g_last_title">Last!</string>
+    <string name="g_last_blurb">Match colors and numbers, call Last! at one card. 2‑6 players.</string>
+    <string name="last_waiting">Dealing the cards…</string>
+    <string name="last_shuffling">Shuffling…</string>
+    <string name="last_dealing">Dealing…</string>
+    <string name="last_your_turn">Your turn</string>
+    <string name="last_turn_of">%1$s\'s turn</string>
+    <string name="last_you">You</string>
+    <string name="last_you_won">You won!</string>
+    <string name="last_winner">%1$s won!</string>
+    <string name="last_cards_n">%1$d cards</string>
+    <string name="last_card_one">Last card!</string>
+    <string name="last_draw_n">Draw · %1$d</string>
+    <string name="last_pass">Keep it and pass</string>
+    <string name="last_pick_colour">Pick a color</string>
+    <string name="last_hint_play">Tap a card to lift it, tap again to play, or swipe it up onto the pile.</string>
+    <string name="last_hint_drew">You drew a card you can play. Tap it twice to play it, or swipe it up.</string>
+    <string name="last_again">Play again</string>
+    <string name="last_leave">Leave</string>
+    <string name="last_colour_red">Red</string>
+    <string name="last_colour_yellow">Yellow</string>
+    <string name="last_colour_green">Green</string>
+    <string name="last_colour_blue">Blue</string>
+    <string name="last_card_ban">Ban</string>
+    <string name="last_card_spin">Spin</string>
+    <string name="last_card_plus2">+2</string>
+    <string name="last_card_cc">Color Change</string>
+    <string name="last_card_cc_sq">Color Change +2²</string>
+    <string name="last_card_fmt">%1$s %2$s</string>
+    <string name="last_ev_played">%1$s played %2$s</string>
+    <string name="last_ev_banned">%1$s is banned</string>
+    <string name="last_ev_drew">%1$s drew %2$d</string>
+    <string name="last_ev_drew_one">%1$s drew a card</string>
+    <string name="last_ev_passed">%1$s passed</string>
+    <string name="last_ev_reversed">Direction reversed</string>
+    <string name="last_rules_title">Rules</string>
+    <string name="last_wait_host">Waiting for the host…</string>
+    <string name="last_btn">LAST!</string>
+    <string name="last_slap">SLAP!</string>
+    <string name="last_slapped">Slapped! Waiting for the others…</string>
+    <string name="last_table_slap">SLAP!</string>
+    <string name="last_rule_cards">Starting cards</string>
+    <string name="last_rule_slap">Slap on 6</string>
+    <string name="last_rule_off">Off</string>
+    <string name="last_rule_on">On</string>
+    <string name="last_rule_slap_hint">Play a 6 and everyone slaps. The last to slap draws 2.</string>
+    <string name="last_rule_draw">When you can\'t play</string>
+    <string name="last_rule_draw_one">Draw 1</string>
+    <string name="last_rule_draw_match">Draw till match</string>
+    <string name="last_rule_draw_two">Draw 2</string>
+    <string name="last_rule_deal">Deal</string>
+    <string name="last_rule_force">Force play</string>
+    <string name="last_rule_force_hint">If a card you draw fits, you must play it.</string>
+    <string name="last_hint_forced">You drew a card that fits. You must play it.</string>
+    <string name="last_again_host">Play again</string>
+    <string name="last_ev_called">%1$s called Last!</string>
+    <string name="last_ev_caught">%1$s caught %2$s! %2$s drew %3$d</string>
+    <string name="last_ev_slap_one">%1$s was last to slap and drew %2$d</string>
+    <string name="last_ev_slap_many">%1$d players missed the slap and drew %2$d each</string>
+    <string name="last_rule_double">Doubling</string>
+    <string name="last_rule_double_hint">Hold more cards with the same number? Play them one after another. Your turn only ends after 2 seconds without another.</string>
+    <string name="last_rule_special">Special 0 &amp; 7</string>
+    <string name="last_rule_special_hint">0: hands rotate. 7: swap with anyone; you only see their card count.</string>
+    <string name="last_hint_swap">Swap hands with…</string>
+    <string name="last_ev_rotated">Hands move on</string>
+    <string name="last_ev_exchanged">%1$s swapped hands with %2$s</string>
+    <string name="last_hint_double">Play another %1$d, or wait and your turn ends.</string>
+    <string name="last_ev_double">%1$s played %2$d in a row</string>
+    <string name="last_callout_ban">Ban</string>
+    <string name="g_pm_title">Picture Match</string>
+    <string name="g_pm_blurb">Flip circles to find matching pictures. A pair scores a point and you go again.</string>
+    <string name="pm_grid">Grid</string>
+    <string name="pm_deal">Deal</string>
+    <string name="pm_waiting">Waiting for the host…</string>
+    <string name="pm_you">You</string>
+    <string name="pm_your_turn">Your turn — flip two circles</string>
+    <string name="pm_their_turn">%1$s\'s turn</string>
+    <string name="pm_matched">Pair! Go again</string>
+    <string name="pm_won">You win!</string>
+    <string name="pm_lost">%1$s wins!</string>
+    <string name="pm_draw">Draw!</string>
+    <string name="last_defend_title">Defend against %1$d!</string>
+    <string name="last_defend_block">Block</string>
+    <string name="last_defend_reverse">Reverse</string>
+    <string name="last_defend_wait">%1$s is defending…</string>
+    <string name="last_ev_defended">%1$s defended with %2$s</string>
+    <string name="last_rule_defense">Defense</string>
+    <string name="last_rule_defense_hint">Block a +2/+4 with a same-colour Ban, or reverse it with a Spin.</string>
+    <string name="last_rule_stack">Stack Lesser</string>
+    <string name="last_rule_stack_hint">Stack a +2 of the chosen colour on a +4. A +4 on a +4 always stacks.</string>
+</resources>
