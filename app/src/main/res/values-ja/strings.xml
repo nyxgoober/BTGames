@@ -27,6 +27,7 @@
     <string name="upd_uptodate">最新版です。</string>
     <string name="upd_available">新しいリリースがあります！</string>
     <string name="upd_failed">F-Droid に接続できません。</string>
+    <string name="upd_failed_github">GitHub に接続できません。</string>
     <string name="upd_download">F-Droid を開く</string>
     <string name="upd_open_link">リンクを開く</string>
     <string name="upd_check_now">今すぐ確認</string>

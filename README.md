@@ -71,14 +71,29 @@ Settings. Changing the string is all a new release needs. It is separate from `v
     gradle assembleRelease                   # the optimised build F-Droid produces
     gradle test                              # JVM unit tests, no device needed
 
-You also need the Android SDK (`local.properties` with `sdk.dir=...`, or `ANDROID_HOME`) and JDK 17+.
+There are no product flavours or extra source sets: a `-PbtgamesFlavor` property selects the update
+checker at build time. The default `fdroid` checks F-Droid's public package API; pass
+`-PbtgamesFlavor=github` to check the latest GitHub Release instead. CI passes the flag so the debug
+artifact and signed releases point at GitHub, while F-Droid and plain `gradle` builds keep the
+F-Droid checker. Unknown values fail the build.
+
+The committed `gradlew` uses Gradle 8.9 (`sh gradlew assembleDebug`). You also need the Android SDK
+(`local.properties` with `sdk.dir=...`, or `ANDROID_HOME`) and JDK 17+.
 minSdk 26 (Android 8.0), compile/target SDK 34. On Termux, add
 `-Pandroid.aapt2FromMavenOverride=$(which aapt2)` to every command: the Maven aapt2 is a Linux binary
 that cannot run there. Release builds use R8 and resource shrinking; F-Droid builds this same
 non-debuggable release variant, so ART AOT-compiles it at install (debug builds are JIT-heavy).
 
+**GitHub Actions:** every push builds a debug APK and uploads it as an artifact. The Release workflow
+is manual: enter a `version_tag` (the codename) and a `release_message`, and it stamps the codename
+into the APK, builds a signed release and publishes a GitHub Release with that tag. Signing needs
+repository secrets `SIGNING_KEYSTORE_BASE64` (base64 of the `.jks`), `SIGNING_STORE_PASSWORD`,
+`SIGNING_KEY_PASSWORD`, and repository variable `SIGNING_KEY_ALIAS`. Without those the release build
+stays unsigned, as it does for F-Droid.
+
 **F-Droid:** the source is self-contained, all fonts are committed, there is no build-time download
-and no proprietary dependency. The in-app updater uses F-Droid's public package API only. The app
+and no proprietary dependency. The in-app updater uses F-Droid's public package API by default; the
+GitHub checker is only selected when `-PbtgamesFlavor=github` is passed. The app
 licence is GPL-3.0 (`LICENSE`) and the bundled font licences are in `LICENSE-FONTS.txt`.
 
 ## Permissions

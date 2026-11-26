@@ -32,6 +32,7 @@
     <string name="upd_uptodate">You\'re up to date.</string>
     <string name="upd_available">A newer release is available!</string>
     <string name="upd_failed">Couldn\'t reach F-Droid.</string>
+    <string name="upd_failed_github">Couldn\'t reach GitHub.</string>
     <string name="upd_download">Open F-Droid</string>
     <string name="upd_open_link">Open link</string>
     <string name="upd_check_now">Check now</string>

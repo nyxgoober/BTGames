@@ -4,17 +4,18 @@ Single-module Android app (`:app`, `us.crafties.btgames`): BLE games (Paddle, XO
 
 ## Build / test
 
-- There is no `gradlew` script; `gradle/wrapper/gradle-wrapper.jar` (Gradle 8.9) is committed. Use any installed Gradle, e.g. `gradle assembleDebug`, or open in Android Studio. F-Droid uses its own wrapper.
+- Build scripts are Groovy DSL (`build.gradle`, `settings.gradle`, `app/build.gradle`). The `gradlew` wrapper (Gradle 8.9) is committed; use any installed Gradle, e.g. `gradle assembleDebug`, or open in Android Studio. F-Droid uses its own wrapper.
 - `gradle assembleDebug` → `app/build/outputs/apk/debug/app-debug.apk`. Needs Android SDK (`local.properties` `sdk.dir=` or `ANDROID_HOME`).
 - `gradle test` — JVM unit tests, no device needed. Single test: `gradle :app:testDebugUnitTest --tests "us.crafties.btgames.net.SidesTest"`.
 - `gradle.properties` has **no** `aapt2FromMavenOverride` (F-Droid builds need the Maven aapt2). On Termux, pass `-Pandroid.aapt2FromMavenOverride=$(which aapt2)` to `gradle` — the Maven binary is Linux-only and cannot run there.
 - Fonts are versioned in `app/src/main/res/font/`: `inter.ttf` and `intern.ttf` (both variable, SIL OFL, see `LICENSE-FONTS.txt`). No download task; offline builds work.
-- No CI, no lint/typecheck scripts — Kotlin compile + `./gradlew test` is the full verification.
+- CI: `.github/workflows/debug.yml` uploads a debug APK artifact on every push; `release.yml` is manual (`version_tag` codename + `release_message`), stamps the codename into the app, signs with GitHub secrets and publishes a GitHub Release. Both pass `-PbtgamesFlavor=github`. No lint/typecheck scripts — Kotlin compile + `gradle test` is the full verification.
+- No product flavours or extra source sets: `-PbtgamesFlavor` defaults to `fdroid`; `github` switches the update checker via `BuildConfig.UPDATE_FLAVOR`. F-Droid builders pass nothing and keep the F-Droid checker.
 
 ## Architecture
 
 - `shell/GameApi.kt` is the plugin contract (`GameDef` + `GameSession`); `shell/GameRegistry.kt` lists games in menu order. Adding a game: new `GameIds` const (never reuse/renumber), `GameDef` + session, register it — nothing else in shell changes. New-game checklist lives in `README.md` "Adding a game".
-- `net/`: `Protocol.kt` (wire format, `Proto.VERSION = 9`), `Transport.kt` (interface games code against), `GattTransport.kt` (BLE), `LoopbackTransport.kt` (radio-free test-mode transport), `Sides.kt` / `PeerTable.kt` / `ConnectDeadline.kt` (pure, unit-tested). `UpdateCheck.kt` queries F-Droid's public package API only — no custom update server.
+- `net/`: `Protocol.kt` (wire format, `Proto.VERSION = 9`), `Transport.kt` (interface games code against), `GattTransport.kt` (BLE), `LoopbackTransport.kt` (radio-free test-mode transport), `Sides.kt` / `PeerTable.kt` / `ConnectDeadline.kt` (pure, unit-tested). `UpdateCheck.kt` (F-Droid) and `GithubUpdateCheck.kt` (GitHub Releases) are pure, unit-tested; the shell picks one from `BuildConfig.UPDATE_FLAVOR` — no custom update server.
 - Per game (`games/<name>/`): engine/board rules + codec + session + screen. `ui/`: `Theme.kt` (`Pal`), `Board.kt` (shared 8×8 board + tap/drag gesture for checkers & chess), `Raised.kt`, `TitleBar.kt` (`AppScreen`), `Haptics.kt`, `Wording.kt`.
 - BLE needs **two physical phones** (advertising/GATT don't work on emulators). One-phone testing: tap the release codename 5× → Debug menu → Test mode → `TestMode` bot in every lobby (`debug/Bots.kt` over `LoopbackTransport`).
 

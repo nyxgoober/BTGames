@@ -1,0 +1,101 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
+}
+
+def btgamesFlavor = project.findProperty('btgamesFlavor') ?: 'fdroid'
+if (!(btgamesFlavor in ['fdroid', 'github'])) {
+    throw new GradleException("Unknown btgamesFlavor '$btgamesFlavor' (expected 'fdroid' or 'github')")
+}
+
+def releaseCodename = project.findProperty('codename') ?: 'Erbium'
+def releaseStoreFile = System.getenv('BTGAMES_KEYSTORE_FILE')
+def releaseStorePassword = System.getenv('BTGAMES_KEYSTORE_PASSWORD')
+def releaseKeyAlias = System.getenv('BTGAMES_KEY_ALIAS')
+def releaseKeyPassword = System.getenv('BTGAMES_KEY_PASSWORD')
+def hasReleaseSigning = [releaseStoreFile, releaseStorePassword, releaseKeyAlias, releaseKeyPassword].every { it }
+
+android {
+    dependenciesInfo {
+        includeInApk false
+        includeInBundle false
+    }
+
+    namespace 'us.crafties.btgames'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'us.crafties.btgames'
+        minSdk 26
+        targetSdk 34
+        versionCode 3
+        versionName releaseCodename
+        buildConfigField 'String', 'UPDATE_FLAVOR', "\"$btgamesFlavor\""
+    }
+
+    signingConfigs {
+        if (hasReleaseSigning) {
+            release {
+                storeFile file(releaseStoreFile)
+                storePassword releaseStorePassword
+                keyAlias releaseKeyAlias
+                keyPassword releaseKeyPassword
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            if (hasReleaseSigning) {
+                signingConfig signingConfigs.release
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    buildFeatures {
+        compose true
+        buildConfig true
+    }
+
+    testOptions {
+        unitTests {
+            returnDefaultValues = true
+        }
+    }
+
+    packaging {
+        resources.excludes += ['/META-INF/{AL2.0,LGPL2.1}']
+    }
+}
+
+dependencies {
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.lifecycle.runtime.ktx
+    implementation libs.androidx.lifecycle.runtime.compose
+    implementation libs.androidx.lifecycle.viewmodel.compose
+    implementation libs.androidx.activity.compose
+
+    implementation platform(libs.androidx.compose.bom)
+    implementation libs.androidx.compose.ui
+    implementation libs.androidx.compose.ui.graphics
+    implementation libs.androidx.compose.animation
+    implementation libs.androidx.compose.foundation
+    implementation libs.androidx.compose.material3
+
+    implementation libs.kotlinx.coroutines.android
+
+    testImplementation libs.junit
+    testImplementation libs.kotlinx.coroutines.test
+}

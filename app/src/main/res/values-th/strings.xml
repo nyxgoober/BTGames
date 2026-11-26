@@ -27,6 +27,7 @@
     <string name="upd_uptodate">คุณใช้รุ่นล่าสุดแล้ว</string>
     <string name="upd_available">มีรุ่นใหม่!</string>
     <string name="upd_failed">ติดต่อ F-Droid ไม่ได้</string>
+    <string name="upd_failed_github">ติดต่อ GitHub ไม่ได้</string>
     <string name="upd_download">เปิด F-Droid</string>
     <string name="upd_open_link">เปิดลิงก์</string>
     <string name="upd_check_now">ตรวจเลย</string>

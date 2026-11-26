@@ -18,6 +18,7 @@ import us.crafties.btgames.BuildConfig
 import us.crafties.btgames.debug.makeBot
 import us.crafties.btgames.net.Codec
 import us.crafties.btgames.net.GameIds
+import us.crafties.btgames.net.GithubUpdateCheck
 import us.crafties.btgames.net.Transport
 import us.crafties.btgames.net.Link
 import us.crafties.btgames.net.GattTransport
@@ -266,12 +267,16 @@ class ShellViewModel(app: Application) : AndroidViewModel(app) {
         prefs.edit().putString(KEY_FONT, tag).apply()
     }
 
-    /** Ask F-Droid's public package API whether this build is current. Safe to call any time. */
+    /** Ask this build's update source whether it is current. Safe to call any time. */
     fun checkForUpdates() {
         if (_update.value is UpdateStatus.Checking) return
         _update.value = UpdateStatus.Checking
         viewModelScope.launch(Dispatchers.IO) {
-            _update.value = UpdateCheck.check(BuildConfig.VERSION_CODE)
+            _update.value = if (BuildConfig.UPDATE_FLAVOR == "github") {
+                GithubUpdateCheck.check(BuildConfig.VERSION_NAME)
+            } else {
+                UpdateCheck.check(BuildConfig.VERSION_CODE)
+            }
         }
     }
 

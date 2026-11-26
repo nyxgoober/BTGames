@@ -1,8 +1,5 @@
 package us.crafties.btgames.net
 
-import java.net.HttpURLConnection
-import java.net.URI
-
 /** F-Droid's public package API for this app. It reports the suggested version code. */
 const val UPDATE_URL = "https://f-droid.org/api/v1/packages/us.crafties.btgames"
 
@@ -23,7 +20,7 @@ sealed interface UpdateStatus {
     /** The repo's suggested version is not newer than this build. */
     data object UpToDate : UpdateStatus
 
-    /** The repo has a newer build; [downloadUrl] is the app's F-Droid page. */
+    /** A release was found; [downloadUrl] is the F-Droid listing or the GitHub APK asset. */
     data class Available(val downloadUrl: String) : UpdateStatus
 
     /** Offline, not listed yet, server error, or an answer we did not understand. */
@@ -48,28 +45,8 @@ object UpdateCheck {
         return if (suggested > myVersionCode) UpdateStatus.Available(FDROID_PAGE) else UpdateStatus.UpToDate
     }
 
-    /**
-     * Blocking GET of the package API. Returns the raw JSON body, or null on any transport or
-     * server error. Callers must stay off the main thread.
-     */
-    fun fetchResponse(): String? {
-        val conn = try {
-            URI(UPDATE_URL).toURL().openConnection() as? HttpURLConnection
-        } catch (_: Exception) {
-            null
-        } ?: return null
-        try {
-            conn.connectTimeout = 8_000
-            conn.readTimeout = 8_000
-            conn.connect()
-            if (conn.responseCode != HttpURLConnection.HTTP_OK) return null
-            return conn.inputStream.bufferedReader().use { it.readText() }
-        } catch (_: Exception) {
-            return null
-        } finally {
-            conn.disconnect()
-        }
-    }
+    /** Blocking GET of the package API. Callers must stay off the main thread. */
+    fun fetchResponse(): String? = httpGet(UPDATE_URL)
 
     /** One full check: fetch the response, then [parse] it. Any failure is [UpdateStatus.Failed]. */
     fun check(myVersionCode: Int, fetch: () -> String? = ::fetchResponse): UpdateStatus {

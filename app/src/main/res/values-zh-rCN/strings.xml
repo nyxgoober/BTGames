@@ -27,6 +27,7 @@
     <string name="upd_uptodate">已是最新版本。</string>
     <string name="upd_available">有新版本可用！</string>
     <string name="upd_failed">无法连接 F-Droid。</string>
+    <string name="upd_failed_github">无法连接 GitHub。</string>
     <string name="upd_download">打开 F-Droid</string>
     <string name="upd_open_link">打开链接</string>
     <string name="upd_check_now">立即检查</string>

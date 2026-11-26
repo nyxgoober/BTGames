@@ -30,6 +30,7 @@ import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+import us.crafties.btgames.BuildConfig
 import us.crafties.btgames.R
 import us.crafties.btgames.net.UpdateStatus
 
@@ -326,6 +327,7 @@ private fun UpdateStatusCard(
     onCheck: () -> Unit,
     onDownload: (String) -> Unit,
 ) {
+    val github = BuildConfig.UPDATE_FLAVOR == "github"
     RaisedCard(Modifier.fillMaxWidth()) {
         Column {
             val message = when (status) {
@@ -333,13 +335,13 @@ private fun UpdateStatusCard(
                 UpdateStatus.Checking -> stringResource(R.string.upd_checking)
                 UpdateStatus.UpToDate -> stringResource(R.string.upd_uptodate)
                 is UpdateStatus.Available -> stringResource(R.string.upd_available)
-                UpdateStatus.Failed -> stringResource(R.string.upd_failed)
+                UpdateStatus.Failed -> stringResource(if (github) R.string.upd_failed_github else R.string.upd_failed)
             }
             Text(message, fontSize = 16.sp, color = Pal.Ink, lineHeight = 22.sp)
             Spacer(Modifier.height(12.dp))
             when (status) {
                 is UpdateStatus.Available -> RaisedButton(
-                    text = stringResource(R.string.upd_download),
+                    text = stringResource(if (github) R.string.upd_open_link else R.string.upd_download),
                     onClick = { onDownload(status.downloadUrl) },
                     tone = Tone.Primary,
                     modifier = Modifier.fillMaxWidth(),
