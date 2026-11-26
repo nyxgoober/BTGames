@@ -14,6 +14,8 @@ on:
 
 permissions:
   contents: write
+  id-token: write
+  attestations: write
 
 jobs:
   release:
@@ -65,14 +67,25 @@ jobs:
           BTGAMES_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
         run: sh gradlew :app:assembleRelease --no-daemon -Pcodename="$VERSION_TAG" -PbtgamesFlavor=github
 
+      - name: Attest build provenance
+        id: attest
+        uses: actions/attest@v4
+        with:
+          subject-path: app/build/outputs/apk/release/app-release.apk
+
       - name: Publish GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
           RELEASE_MESSAGE: ${{ inputs.release_message }}
+          ATTESTATION_URL: ${{ steps.attest.outputs.attestation-url }}
         run: |
-          NOTES=$(printf '%s\n\n%s' "$RELEASE_MESSAGE" "Thank you for playing BT Games! Please open up an issue if you find any bugs.")
+          NOTES=$(printf '%s\n\n%s\n\n%s' \
+            "$RELEASE_MESSAGE" \
+            "Thank you for playing BT Games! Please open up an issue if you find any bugs." \
+            "Build provenance: $ATTESTATION_URL")
           gh release create "$VERSION_TAG" \
             app/build/outputs/apk/release/app-release.apk \
+            --draft \
             --title "$VERSION_TAG" \
             --notes "$NOTES"
-
+          gh release edit "$VERSION_TAG" --draft=false
