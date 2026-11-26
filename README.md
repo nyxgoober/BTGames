@@ -6,6 +6,13 @@ Package: `us.crafties.btgames`. Games included: **Paddle**, **XO** (tic-tac-toe)
 **4 Chips**, **Checkers**, **Cup Shuffle**, **Chess**, **Shut The Box**, **Last!** (a card game,
 2‑6 players) and **Picture Match** (a memory game, 2‑6 players).
 
+<p align="center">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="180">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="180">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/3.png" width="180">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/4.png" width="180">
+</p>
+
 ## How it plays
 
 1. The main menu lists the games. Tap one.
